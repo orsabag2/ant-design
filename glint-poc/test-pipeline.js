@@ -3,7 +3,7 @@
 import dotenv from 'dotenv';
 import OpenAI from 'openai';
 import Anthropic from '@anthropic-ai/sdk';
-import { ElevenLabs } from '@elevenlabs/elevenlabs-js';
+import { ElevenLabsClient } from '@elevenlabs/elevenlabs-js';
 
 dotenv.config();
 
@@ -59,7 +59,7 @@ const testAnthropic = async () => {
 const testElevenLabs = async () => {
   log('TEST', 'Testing ElevenLabs API...');
   try {
-    const client = new ElevenLabs({
+    const client = new ElevenLabsClient({
       apiKey: process.env.ELEVENLABS_API_KEY,
     });
 

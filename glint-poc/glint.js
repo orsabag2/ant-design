@@ -7,7 +7,7 @@ import { execSync } from 'child_process';
 import dotenv from 'dotenv';
 import OpenAI from 'openai';
 import Anthropic from '@anthropic-ai/sdk';
-import { ElevenLabs } from '@elevenlabs/elevenlabs-js';
+import { ElevenLabsClient } from '@elevenlabs/elevenlabs-js';
 import ffmpeg from 'fluent-ffmpeg';
 
 dotenv.config();
@@ -141,7 +141,7 @@ Write in a natural, conversational tone suitable for voiceover narration.`;
 const generateVoiceover = async (script, outputPath) => {
   log('VOICEOVER', 'Generating AI voiceover...');
 
-  const client = new ElevenLabs({
+  const client = new ElevenLabsClient({
     apiKey: process.env.ELEVENLABS_API_KEY,
   });
 
